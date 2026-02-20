@@ -37,8 +37,15 @@ body {
     background: radial-gradient(circle, rgba(0, 238, 255, 0.1) 0%, transparent 70%);
     z-index: 0;
 }
-.return{
+.return-link {
+    display: inline-block; /* o block según necesites */
+    text-decoration: none;
+    /* más estilos... */
+}
+
+.return-paragraph {
     color:#00eeff
+    /* estilos específicos del texto */
 }
 .game-header {
     text-align: center;

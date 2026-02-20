@@ -15,6 +15,23 @@ body {
     color: white;
 }
 
+.return-link {
+    display: inline-block; /* o block según necesites */
+    text-decoration: none;
+    padding: 2px;
+    border:1px solid #00eeff;
+    border-radius:5px;
+    color:#00eeff;
+
+    /* más estilos... */
+}
+
+.return-paragraph {
+    color:#00eeff;
+    margin-right: 10px;
+    /* estilos específicos del texto */
+}
+
 .game-container {
     background: rgba(15, 15, 35, 0.9);
     border-radius: 20px;
@@ -36,16 +53,6 @@ body {
     height: 200%;
     background: radial-gradient(circle, rgba(0, 238, 255, 0.1) 0%, transparent 70%);
     z-index: 0;
-}
-.return-link {
-    display: inline-block; /* o block según necesites */
-    text-decoration: none;
-    /* más estilos... */
-}
-
-.return-paragraph {
-    color:#00eeff
-    /* estilos específicos del texto */
 }
 .game-header {
     text-align: center;
@@ -287,6 +294,9 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body{
+        display: block;
+    }
     .game-container {
         padding: 15px;
         margin: 10px;

@@ -8,6 +8,9 @@ body {
     background-position: center;
     
 }
+li{
+    display: flex;
+}
 h1 {
     color:white;
     text-align: center;

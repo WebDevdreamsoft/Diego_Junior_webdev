@@ -1,0 +1,27 @@
+a {
+    color:white;
+}
+body {
+    background-image: url("calgary.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+h1 {
+    color:white;
+    text-align: center;
+}
+h2 {
+    color: white;
+}
+h3 {
+    color:white;
+    text-align: center;
+}
+li {
+    color:white;
+    background-color: rgba(0,0,0,0.7);
+    padding:5px 5px;
+    margin: 7px 5px 0px 5px;
+}

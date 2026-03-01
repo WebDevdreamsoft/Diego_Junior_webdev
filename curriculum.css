@@ -1,5 +1,17 @@
-a {
+.header_links {
     color:white;
+    background-color: rgba(0,0,0,0.7);
+    text-decoration: none;
+    border-radius: 20px;
+    padding:5px 5px;
+}
+.profile_pic{
+    border: 4px, solid, #cc0099;
+    height: 400px;
+    width: 400px;    
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 body {
     background-image: url("calgary.jpeg");
@@ -24,7 +36,5 @@ h3 {
 }
 li {
     color:white;
-    background-color: rgba(0,0,0,0.7);
-    padding:5px 5px;
     margin: 7px 5px 0px 5px;
 }

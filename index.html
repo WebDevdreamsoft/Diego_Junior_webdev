@@ -9,21 +9,58 @@
     </head>
     <header >
         <ul id="header">
-            <a href="info.html"><li class="links">Contact information</li></a>
-            <a href="EnglishCV.pdf" download="EnglishCV.pdf"><li class="links">Get my CV.docx</li></a>
-            <a href="./snake.html"><li class="links">Play Snake</li></a>
+            <a href="javascript:void(0);" onclick="showContactInfo()"><li class="headerlinks">Contact information</li></a>
+            <a href="EnglishCV.pdf" download="EnglishCV.pdf"><li class="headerlinks">Get my CV.docx</li></a>
+            <a href="./snake.html"><li class="headerlinks">Play Snake</li></a>
         </ul>
     </header>
     <body id="body">
+        <main>
         <h1>This is Juan Perez</h1>
         <h2>an Junior Front End Developer</h2>
         <h3>If any chances of being hired please click below!</h3>
-        <a href="curriculum.html" class="curriculum">Online Curriculim</a>
+        <button onclick="showLoginPopup()" class="curriculum">Online Curriculim</button>
+        <div class="image-gallery">
+            <img src="image1.jpg" alt="Coding project 1" class="image1" class="gallery-image">
+            <img id="image" class="gallery-image" src="image.jpg" alt="HAPPY CODING ;)">
+            <img src="image3.jpg" alt="Coding project 3" class="image2" class="gallery-image">
+        </div>
         
-        <img id="image" src="image.jpg" alt="HAPPY CODING ;)">
-    </body>
-    <footer id="footer">
+        <footer id="footer">
         <p>All of the images in this website are own by Juan Diego Perez de la Fuente,
             and he is not afraid of demanding anyone for the use of his property.</p>
-    </footer>
+        </footer>
+        </main>
+
+        <div id="contactPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closeContactPopup()">&times;</span>
+            <h2>Contact Information</h2>
+            <p><strong>Email:</strong> mispapeles02@gmail.com</p>
+            <p><strong>LinkedIn:</strong> linkedin.com</p>
+            <p><strong>GitHub:</strong> github.com</p>
+        </div>
+
+        <div id="loginPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closeLoginPopup()">&times;</span>
+                <h2>Protected Area Access</h2>
+                <p>Please enter your credentials:</p>
+            
+                <div class="login-form">
+                    <input type="text" id="username" placeholder="Username" class="login-input">
+                    <input type="password" id="password" placeholder="Password" class="login-input">
+                    <button onclick="checkLogin()" class="login-button">Access</button>
+                </div>
+            
+                <div class="download-section">
+                    <p>Don't have credentials? <a href="credentials.txt" download>Download credentials file</a></p>
+                    <p class="instructions">Instructions: The username is "user1" and the password is "1234"</p>
+                </div>
+            </div>
+        </div>
+        
+        <script src="index.js"></script>
+    </body>
+    
 </html>

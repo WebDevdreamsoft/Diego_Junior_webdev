@@ -28,7 +28,7 @@ function checkLogin() {
     
     // Credenciales correctas
     if (username === 'user1' && password === '1234') {
-        alert('¡Acceso concedido! Redirigiendo al área protegida...');
+        
         window.location.href = 'curriculum.html';
     } else {
         // Mostrar mensaje de error

@@ -257,14 +257,14 @@ h3 {
 #footer {
     padding: 25px 20px;
     background-color: white;
-    opacity: 0.7;
+    opacity: 0.94;
     text-align: center;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     font-size: 1em;
-    color: #333;
+    color: #151515;
 }
 
 a {
@@ -274,6 +274,20 @@ a {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    
+    #footer {
+        position: inherit;
+        padding: 25px 20px;
+        background-color: white;
+        opacity: 0.9.4;
+        text-align: center;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        font-size: 1em;
+        color: #151515;
+    }
+
     .image-gallery {
         flex-direction: column;
         align-items: center;

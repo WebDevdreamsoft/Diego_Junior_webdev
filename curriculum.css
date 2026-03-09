@@ -1,10 +1,42 @@
+
+.header{
+    display: flex;
+    align-items: center;
+}
+
+
 .header_links {
     color:white;
     background-color: rgba(0,0,0,0.7);
     text-decoration: none;
     border-radius: 20px;
     padding:5px 5px;
+    border: 1px, solid, #cc0099;
+    list-style-type: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+.header_links:hover {
+    background-color: rgba(0,0,0,0.9);
+    transform: scale(1.05);
+}
+.project_link{
+    color:white;
+    background-color: rgba(0,0,0,0.7);
+    text-decoration: none;
+    border-radius: 20px;
+    padding:5px 5px;
+    border: 1px, solid, #cc0099;
+    list-style-type: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.project_link:hover{
+    background-color: rgba(0,0,0,0.9);
+    transform: scale(1.05);
+}
+
 .profile_pic{
     border: 4px, solid, #cc0099;
     height: 400px;
@@ -37,4 +69,8 @@ h3 {
 li {
     color:white;
     margin: 7px 5px 0px 5px;
+}
+
+@media (max-width: 768px) {
+
 }

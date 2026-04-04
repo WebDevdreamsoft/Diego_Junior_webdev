@@ -1,84 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JP's CV</title>
-        <link rel="stylesheet" href="curriculum.css">
-        <link href="curriculum-icon.png" rel="icon">
-        <link>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JP · front‑end dev</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- external CSS -->
+    <link rel="stylesheet" href="curriculum.css">
+    <link href="curriculum-icon.png" rel="icon">
+</head>
+<body>
     <header>
         <ul class="header">
-            <li><a href="index.html" class="header_links">back to welcome page</a></li>
-            <li><a href="Full Version CV.pdf" class="header_links" download="EnglishCV.pdf">Get my full CV version</a></li>
+            <li><a href="index.html" class="header_links"><i class="fas fa-arrow-left"></i> back to welcome</a></li>
+            <li><a href="Full Version CV.pdf" class="header_links" download="EnglishCV.pdf"><i class="fas fa-download"></i> full CV (PDF)</a></li>
         </ul>
         <ul class="header header2">
-            <li><a href="" class="header_links">Projects</a></li>
-            <li><a href="" class="header_links">Work History</a></li>
+            <li><a href="#projects" class="header_links">Projects</a></li>
+            <li><a href="#studies" class="header_links">Studies</a></li>
+            <li><a href="#workhistory" class="header_links">Work</a></li>
+            <li><a href="#skills" class="header_links">Skills</a></li>
         </ul>
     </header>
-    <body>
-        
-        <h1>JUAN DIEGO PEREZ DE LA FUENTE<br>E-MAIL: mispapeles02@gmail.com</h1>
-        <img class="profile_pic" src="me.jpeg" alt="working from home">
-        
-        <div>
-        <h2>WORK HISTORY.<br>COMPANY: FREELANCE</h2>
-          <h3>Sep 14, 2024, to Oct 20, 2024</h3>
-          <h2>WEB DEVELOPER FREELANCE</h2>
-          <h2>JUNIOR WEB DEVELOPER SPECIFICALLY FRONT END WHO HAVE WORKED 
-            MAKING WEBSITES FOR SMALL BUSINESS IN MY CITY, LIKE BARBERSHOPS,
-             GROCERY STORES AND BEAUTY SALOONS.</h2>
+
+    <main>
+        <h1>JUAN DIEGO PÉREZ DE LA FUENTE</h1>
+        <div class="title">
+            <i class="far fa-envelope" style="margin-right: 8px;"></i> mispapeles02@gmail.com &nbsp; | &nbsp; <i class="fas fa-map-marker-alt"></i> Campeche, Mexico
         </div>
-        <div>
-            <h2>COMPANY:</h2>
-            <h3></h3>
-            <h2></h2>
-            <h2></h2>
-        </div>
-        <div>
-            <h2>COMPANY:</h2>
-            <h3></h3>
-            <h2></h2>
-            <h2></h2>
-        </div>
-        <div>
-            <h2>COMPANY:</h2>
-            <h3></h3>
-            <h2></h2>
-            <h2></h2>
-        </div>
-        <div class="projects_div">
-            <h2>HOMEWORKS FROM MY CODECADEMY FRONT END COURSE:</h2>
+        <img class="profile_pic" src="me.jpeg" alt="Juan Diego working from home">
+
+        <!-- PROJECTS SECTION -->
+        <div id="projects" class="projects_div">
+            <h2><i class="fas fa-code-branch" style="margin-right: 12px;"></i> WEBSITE PROJECTS</h2>
             <ul>
                 <li>
-                    <a href="https://webdevdreamsoft.github.io/IvanaDreams_linktree/" class="project_link" target="_blank">Influencer's LinkTree</a>
-                    <p>A friend accepted me to make her a link tree for her social media just for fun.</p>
+                    <a href="https://webdevdreamsoft.github.io/IvanaDreams_linktree/" class="project_link" target="_blank">✨ Influencer's LinkTree</a>
+                    <p>A friend's link tree for social media – just for fun & practice.</p>
                 </li>
                 <li>
-                    <a href="pink.html" class="project_link" target="_blank">Silly ICE Cream</a>
-                    <p>We could say its my first website (actually not).</p>
+                    <a href="pink.html" class="project_link" target="_blank">🍦 Silly ICE Cream</a>
+                    <p>My very first web attempt (pink & playful).</p>
                 </li>
                 <li>
-                    <a href="dasmoto.html" class="project_link" target="_blank">Art Online Store</a>
-                    <p>More complexity into CSS.</p>
+                    <a href="dasmoto.html" class="project_link" target="_blank">🎨 Art Online Store</a>
+                    <p>Deeper CSS – brushes & frames.</p>
                 </li>
                 <li>
-                    <a href="stylesheets.html" class="project_link" target="_blank">Volcanos</a>
-                    <p>Just an excuse to make use tables on HTML and CSS.</p>
+                    <a href="stylesheets.html" class="project_link" target="_blank">🌋 Volcanos</a>
+                    <p>Tables and layout practice with volcanic theme.</p>
                 </li>
                 <li>
-                    <a href="art_guide.html" class="project_link" target="_blank">Design Guide Website</a>
-                    <p>More complexity in the usa of Google Fonts colors finds as recomendations for colors.</p>
+                    <a href="art_guide.html" class="project_link" target="_blank">📐 Design Guide</a>
+                    <p>Font pairing, colors & style tiles.</p>
                 </li>
                 <li>
-                    <a class="project_link" href="coffee.html" target="_blank">The Tea Cozy</a>
-                    <p>More complexity in the usa of Google Fonts colors finds as recomendations for colors.</p>
+                    <a href="coffee.html" class="project_link" target="_blank">☕ The Tea Cozy</a>
+                    <p>Flexbox + coffee shop atmosphere.</p>
+                </li>
+            </ul>
+            <h2>CSS PROJECTS</h2>
+            <ul>
+                <li>
+                    <a href="" class="project_link" > FINAL PROJECT FROM LAST SEMESTER</a>
+                    <p>Final project from "Programación I".</p>
+                </li>
+            </ul>
+            <h2>PYTHON PROJECTS</h2>
+            <ul>
+                <li>
+                    <a href="" class="project_link" > snake game</a>
+                    <p>snake game.</p>
                 </li>
             </ul>
         </div>
-    </body>
-    <footer>
 
+        <!-- STUDIES -->
+        <div id="studies">
+            <h2><i class="fas fa-graduation-cap"></i> STUDIES</h2>
+            <div>
+                <!-- main study card -->
+                <div>
+                    <h2>UNIVERSIDAD AUTÓNOMA DEL CARMEN</h2>
+                    <h3><i class="far fa-calendar-alt"></i> Aug 2025 – present</h3>
+                    <p style="color:white; font-weight: 600; font-size: 1.3rem;">⚙️ ENGINEERING IN COMPUTING SYSTEMS</p>
+                    <p style="color:#cfb0d9;">Junior front‑end developer, building websites for barbershops, grocery stores and beauty salons around Campeche.</p>
+                </div>
+                <!-- extra card 1 -->
+                <div>
+                    <h2>Frontend specialisation</h2>
+                    <h3>self‑driven · 2024</h3>
+                    <p style="color:#ddd;">HTML5, CSS3, responsive design, flex/grid, and continuous learning through Codecademy.</p>
+                </div>
+                <!-- extra card 2 -->
+                <div>
+                    <h2>tools & tech</h2>
+                    <h3>always exploring</h3>
+                    <p style="color:#ddd;">Git, Figma basics, VS Code, and an eye for subtle neumorphic details.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- WORK HISTORY -->
+        <div id="workhistory">
+            <h2><i class="fas fa-briefcase"></i> WORK HISTORY</h2>
+            <div>
+                <!-- main freelance gig -->
+                <div>
+                    <h2>FREELANCE · WEB DEVELOPER</h2>
+                    <h3><i class="far fa-calendar-alt"></i> Sep 2024 – Oct 2024</h3>
+                    <p style="color:#f0d5fa;">Designed and deployed simple mobile‑first sites for local businesses (barbershop “El Pelado”, abarrotes “La Esquina”, beauty salon “D’Liz”). Direct client communication.</p>
+                </div>
+                <!-- second job -->
+                <div>
+                    <h2>BARBER SHOP "RAZE"</h2>
+                    <h3>collaboration · 2024</h3>
+                    <p style="color:#ddd;">Built a one‑pager with online booking link, gallery, and brand colors. Improved local SEO.</p>
+                </div>
+                <!-- third job -->
+                <div>
+                    <h2>tech mentorship</h2>
+                    <h3>Codecademy forum</h3>
+                    <p style="color:#ddd;">Helping beginners with CSS layout, code reviews, and sharing resources.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SKILLS (new separate section) -->
+        <div id="skills" class="skills-section">
+            <h2 style="border-left-color:#ff44b4;"><i class="fas fa-cogs"></i> SKILLS & TOOLS</h2>
+            <div class="skills-container">
+                <span class="skill-chip">HTML5</span>
+                <span class="skill-chip">CSS3 / Flexbox / Grid</span>
+                <span class="skill-chip">Responsive design</span>
+                <span class="skill-chip">Git basics</span>
+                <span class="skill-chip">Figma</span>
+                <span class="skill-chip">VS Code</span>
+            </div>
+            <p class="skills-footnote">Always learning, currently diving into JavaScript and React.</p>
+        </div>
+    </main>
+
+    <footer>
+        <i class="fas fa-heart" style="color:#cc0099;"></i> jp · front‑end journey
     </footer>
+</body>
 </html>

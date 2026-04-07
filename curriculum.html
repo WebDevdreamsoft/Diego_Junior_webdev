@@ -14,6 +14,27 @@
     <link rel="stylesheet" href="curriculum.css">
     <link href="curriculum-icon.png" rel="icon">
 </head>
+<script>
+    // SECURITY: Only allow access from index.html via login
+        const isAuthenticated = sessionStorage.getItem('authenticated');
+        
+        if (!isAuthenticated || isAuthenticated !== 'true') {
+            // Not logged in - redirect to home
+            window.location.href = 'index.html';
+        }
+        
+        // Optional: Session timeout after 30 minutes
+        const loginTime = sessionStorage.getItem('loginTime');
+        const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes
+        
+        if (loginTime && (Date.now() - parseInt(loginTime)) > SESSION_TIMEOUT) {
+            sessionStorage.clear();
+            window.location.href = 'index.html';
+        }
+        
+        // Refresh session time
+        sessionStorage.setItem('loginTime', Date.now());
+</script>
 <body class="background-container">
     <header>
         <ul class="header">

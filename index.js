@@ -22,6 +22,9 @@ function closeLoginPopup() {
     // Limpiar los campos
     document.getElementById('username').value = '';
     document.getElementById('password').value = '';
+    // Remove any error messages
+    const oldError = document.querySelector('.error-message');
+    if (oldError) oldError.remove();
 }
 
 async function loadCredentials() {
@@ -48,7 +51,7 @@ async function loadCredentials() {
     }
 }
 
-// Función para verificar el login - MAKE IT ASYNC
+// Función para verificar el login - FIXED VERSION
 async function checkLogin() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -74,6 +77,12 @@ async function checkLogin() {
     
     // Now check the credentials
     if (username === validCredentials.username && password === validCredentials.password) {
+        // ***** THESE 3 LINES WERE MISSING - ADD THEM BACK *****
+        sessionStorage.setItem('authenticated', 'true');
+        sessionStorage.setItem('username', username);
+        sessionStorage.setItem('loginTime', Date.now());
+        // ***** END OF ADDED LINES *****
+        
         window.location.href = 'curriculum.html';
     } else {
         // Show error message

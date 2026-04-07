@@ -13,9 +13,8 @@
     <!-- external CSS -->
     <link rel="stylesheet" href="curriculum.css">
     <link href="curriculum-icon.png" rel="icon">
-</head>
-<script>
-    // SECURITY: Only allow access from index.html via login
+    <script>
+        // SECURITY: Only allow access from index.html via login
         const isAuthenticated = sessionStorage.getItem('authenticated');
         
         if (!isAuthenticated || isAuthenticated !== 'true') {
@@ -34,7 +33,9 @@
         
         // Refresh session time
         sessionStorage.setItem('loginTime', Date.now());
-</script>
+    </script>
+</head>
+
 <body class="background-container">
     <header>
         <ul class="header">

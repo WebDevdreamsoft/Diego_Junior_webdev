@@ -27,13 +27,13 @@ body::before {
     background-repeat: no-repeat;
 }
 
-/* All your content needs to be above the background */
+/* All content needs to be above the background */
 header, main, footer {
     position: relative;
     z-index: 1;
 }
 
-/* ========== BACKGROUND IMAGES ========== */
+/* ========== BACKGROUND IMAGES - RESTORED ========== */
 /* DESKTOP (min-width: 1024px) */
 @media screen and (min-width: 1024px) and (orientation: landscape) {
     body::before {
@@ -75,7 +75,7 @@ header, main, footer {
     }
 }
 
-/* ========== HEADER STYLES - CENTERED & RESPONSIVE ========== */
+/* ========== HEADER STYLES ========== */
 .header {
     display: flex;
     flex-wrap: wrap;
@@ -89,7 +89,6 @@ header, main, footer {
     background: transparent;
 }
 
-/* Individual link styling */
 .header_links {
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
@@ -120,8 +119,7 @@ header, main, footer {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
 
-/* ========== TABLET & PHONE: TWO ROWS, CENTERED ========== */
-/* For screens up to 860px, we switch to grid layout with exactly 3 columns = 2 rows (6 items) */
+/* Responsive header */
 @media screen and (max-width: 860px) {
     .header {
         display: grid;
@@ -134,7 +132,6 @@ header, main, footer {
         margin-left: auto;
         margin-right: auto;
     }
-    
     .header_links {
         justify-self: center;
         white-space: nowrap;
@@ -144,54 +141,21 @@ header, main, footer {
     }
 }
 
-/* For medium tablets (768px - 860px) keep 3 columns */
-@media screen and (min-width: 768px) and (max-width: 860px) {
-    .header {
-        grid-template-columns: repeat(3, minmax(130px, 180px));
-        gap: 14px 20px;
-    }
-}
-
-/* For small phones (max-width: 600px) - still 3 columns to maintain 2 rows */
 @media screen and (max-width: 600px) {
     .header {
         grid-template-columns: repeat(3, minmax(100px, 1fr));
         gap: 12px 12px;
         padding: 16px 12px;
-        max-width: 500px;
     }
-    
     .header_links {
         white-space: normal;
         text-align: center;
-        word-break: keep-all;
         font-size: 0.72rem;
         padding: 7px 10px;
-        justify-content: center;
-        line-height: 1.3;
     }
 }
 
-/* For extra small devices (below 450px) - adjust padding and font */
-@media screen and (max-width: 450px) {
-    .header {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px 8px;
-        padding: 14px 10px;
-    }
-    
-    .header_links {
-        font-size: 0.65rem;
-        padding: 6px 8px;
-        gap: 4px;
-    }
-    
-    .header_links i {
-        font-size: 0.7rem;
-    }
-}
-
-/* ========== PROJECT LINK STYLES ========== */
+/* ========== PROJECTS SECTION ========== */
 .project_link {
     color: white;
     background-color: rgba(0, 0, 0, 0.7);
@@ -210,7 +174,6 @@ header, main, footer {
     transform: scale(1.05);
 }
 
-/* ========== PROFILE PICTURE ========== */
 .profile_pic {
     border: 4px solid #cc0099;
     height: 400px;
@@ -219,13 +182,15 @@ header, main, footer {
     display: block;
     margin: 20px auto;
     object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
-/* ========== TYPOGRAPHY & UTILITIES ========== */
 .title {
     color: white;
     text-align: center;
     margin: 15px 0;
+    font-size: 1rem;
+    text-shadow: 0 1px 2px black;
 }
 
 li {
@@ -240,6 +205,7 @@ h1 {
     margin: 20px 0;
     font-size: 2rem;
     letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 h2 {
@@ -247,156 +213,229 @@ h2 {
     margin: 20px 0 10px 0;
 }
 
-h3 {
-    color: white;
-    text-align: center;
+.projects_div h2 {
+    margin-top: 30px;
+    border-left: 5px solid #ff44b4;
+    padding-left: 15px;
 }
-
-/* ========== SKILLS SECTION ========== */
-.skills-section {
-    margin: 30px 0;
-}
-
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 15px 0;
-}
-
-.skill-chip {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid #cc0099;
-    font-size: 14px;
-}
-
-.skills-footnote {
-    color: white;
-    margin-top: 15px;
-    font-style: italic;
-}
-
-/* ========== MAIN CONTENT ========== */
-main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* ========== FOOTER ========== */
-footer {
-    color: white;
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    margin-top: 40px;
-}
-
-/* ========== STUDIES & WORK HISTORY CARDS ========== */
-#studies > div,
-#workhistory > div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 15px;
-}
-
-#studies > div > div,
-#workhistory > div > div {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(4px);
-    border-radius: 20px;
-    padding: 20px;
-    flex: 1;
-    min-width: 250px;
-    border-left: 4px solid #ff44b4;
-    transition: transform 0.2s ease;
-}
-
-#studies > div > div:hover,
-#workhistory > div > div:hover {
-    transform: translateY(-3px);
-    background-color: rgba(0, 0, 0, 0.65);
-}
-
-#studies h2, #workhistory h2 {
-    margin-top: 0;
-    font-size: 1.3rem;
-}
-
-#studies h3, #workhistory h3 {
-    text-align: left;
-    color: #ffbbee;
-    margin: 8px 0;
-    font-weight: 400;
-}
-
-/* ========== RESPONSIVE ADJUSTMENTS ========== */
-/* Profile picture responsive */
-@media screen and (max-width: 768px) {
-    .profile_pic {
-        height: 250px;
-        width: 250px;
-    }
-    
-    h1 {
-        font-size: 1.5rem;
-        padding: 0 10px;
-    }
-    
-    .title {
-        font-size: 0.85rem;
-        padding: 0 10px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .profile_pic {
-        height: 200px;
-        width: 200px;
-    }
-    
-    h1 {
-        font-size: 1.3rem;
-    }
-    
-    main {
-        padding: 15px;
-    }
-    
-    .skill-chip {
-        font-size: 11px;
-        padding: 5px 12px;
-    }
-}
-
-/* Studies & work cards on mobile */
-@media screen and (max-width: 700px) {
-    #studies > div,
-    #workhistory > div {
-        flex-direction: column;
-    }
-    
-    #studies > div > div,
-    #workhistory > div > div {
-        min-width: auto;
-    }
-}
-
-/* Project list adjustments */
-
 
 .projects_div ul li p {
-    color: #e0e0e0;
+    color: #ffffff;
     font-size: 0.9rem;
     margin-top: 5px;
     margin-left: 5px;
 }
 
-/* Smooth scrolling for anchor links */
+/* ========== BRICK SECTION (STUDIES & WORK) ========== */
+/* Purple pixel brick background for the entire section containers */
+.brick-section {
+    margin: 40px 0 30px 0;
+    padding: 20px 20px 30px 20px;
+    border-radius: 32px;
+    /* KEY: brick.png repeating background (purple pixel art wall) */
+    background-image: url('brick.png');
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: auto;
+    background-color: #2e1a44;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    /* Add slight transparency so body background subtly shows through edges */
+    background-blend-mode: normal;
+}
+
+/* Section titles over brick background */
+.section-title-brick {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 5px #2a0845;
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding-left: 10px;
+    border-left: 6px solid #ffaaee;
+    letter-spacing: -0.3px;
+}
+
+.section-title-brick i {
+    margin-right: 14px;
+    color: #ffc0f0;
+}
+
+/* Grid layout for white cards */
+.brick-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+}
+
+/* White background card that sits OVER the brick pattern */
+.brick-card {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: none;
+    border-radius: 28px;
+    padding: 1.8rem;
+    flex: 1;
+    min-width: 260px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    transition: transform 0.25s ease, box-shadow 0.2s;
+    border: 1px solid rgba(180, 120, 220, 0.4);
+}
+
+.brick-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 32px rgba(0, 0, 0, 0.4);
+    background: white;
+}
+
+/* Text inside white cards: dark for contrast */
+.brick-card h2 {
+    color: #2c1a44;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 8px;
+    border-left: 4px solid #b45cf0;
+    padding-left: 14px;
+}
+
+.brick-card h3 {
+    color: #5a3c7c;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0.5rem 0 0.9rem 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.brick-card p {
+    color: #2d1a3b;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+.brick-card .card-highlight {
+    font-weight: 700;
+    color: #9b4bdb;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.brick-card i {
+    color: #aa66ff;
+}
+
+/* ========== SKILLS SECTION ========== */
+.skills-section {
+    margin: 40px 0 20px;
+    background: rgba(20, 12, 30, 0.7);
+    backdrop-filter: blur(4px);
+    border-radius: 32px;
+    padding: 20px 25px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0 10px;
+}
+
+.skill-chip {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 40px;
+    border: 1px solid #d86eff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.skill-chip:hover {
+    background-color: #b84de8;
+    color: #1a0b2a;
+    transform: scale(1.02);
+}
+
+.skills-footnote {
+    color: #f0d5ff;
+    margin-top: 18px;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* ========== MAIN CONTAINER ========== */
+main {
+    padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 22px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: 50px;
+    font-size: 0.85rem;
+    backdrop-filter: blur(4px);
+}
+
+/* ========== RESPONSIVE ========== */
+@media screen and (max-width: 768px) {
+    .profile_pic {
+        height: 250px;
+        width: 250px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .title {
+        font-size: 0.85rem;
+    }
+    .brick-section {
+        padding: 16px;
+    }
+    .brick-card {
+        padding: 1.2rem;
+        min-width: 220px;
+    }
+    .section-title-brick {
+        font-size: 1.6rem;
+    }
+    .brick-card h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile_pic {
+        height: 180px;
+        width: 180px;
+    }
+    main {
+        padding: 12px;
+    }
+    .brick-grid {
+        gap: 20px;
+    }
+    .brick-card {
+        padding: 1rem;
+    }
+    .skill-chip {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+    .section-title-brick {
+        font-size: 1.4rem;
+    }
+}
+
+/* smooth scrolling */
 html {
     scroll-behavior: smooth;
 }

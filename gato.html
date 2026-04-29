@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>🐱 Mundo Gatuno | Adorables Felinos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', 'Helvetica Neue', 'Noto Sans', sans-serif;
+      background: linear-gradient(145deg, #fff9f0 0%, #fef3e2 100%);
+      color: #2e241f;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* contenedor principal */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* header con onda ilustrativa */
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+      background: rgba(255, 248, 235, 0.7);
+      border-radius: 4rem 2rem 4rem 2rem;
+      padding: 2rem 1rem;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      background: linear-gradient(135deg, #f59e0b, #dc6b1f);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero h1 span {
+      background: none;
+      color: #d46b1a;
+      font-size: 3rem;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-top: 0.8rem;
+      color: #5c3e2b;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ffedd5;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #b45309;
+      margin-bottom: 1rem;
+      box-shadow: inset 0 0 0 1px #fed7aa;
+    }
+
+    /* galería de imágenes estilo carta */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .cat-card {
+      background: white;
+      border-radius: 2.5rem 1.5rem 2.5rem 1.5rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 15px 30px -12px rgba(0,0,0,0.15);
+      cursor: pointer;
+      border: 1px solid #ffe1b9;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2);
+    }
+
+    .cat-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .cat-card:hover .cat-img {
+      transform: scale(1.02);
+    }
+
+    .cat-info {
+      padding: 1.3rem 1.2rem 1.5rem;
+      background: white;
+    }
+
+    .cat-info h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #a34e1a;
+      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cat-info p {
+      color: #5b3e2b;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    .emoji-paw {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    /* sección de datos curiosos y frases */
+    .facts-section {
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+      border-radius: 3rem;
+      padding: 2rem 2rem;
+      margin: 3rem 0;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      border: 1px solid #ffefcf;
+    }
+
+    .facts-section h2 {
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.5rem;
+      color: #804e2c;
+      border-left: 6px solid #f9a26c;
+      padding-left: 1rem;
+    }
+
+    .facts-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+
+    .fact-card {
+      flex: 1;
+      min-width: 180px;
+      background: #fffaf2;
+      border-radius: 1.8rem;
+      padding: 1.2rem;
+      text-align: center;
+      transition: all 0.2s;
+      border: 1px solid #ffe1b4;
+    }
+
+    .fact-icon {
+      font-size: 2.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .fact-card h4 {
+      font-weight: 700;
+      color: #c0652a;
+      margin-bottom: 0.4rem;
+    }
+
+    .fact-card p {
+      font-size: 0.9rem;
+      color: #745d48;
+    }
+
+    /* razas destacadas */
+    .breeds {
+      margin: 3rem 0;
+    }
+
+    .breeds h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #804e2c;
+    }
+
+    .breed-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .breed-tag {
+      background: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 100px;
+      font-weight: 600;
+      color: #b6581a;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: 0.2s;
+      border: 1px solid #ffe2bb;
+      font-size: 1rem;
+    }
+
+    .breed-tag:hover {
+      background: #ffedd5;
+      transform: scale(1.02);
+      cursor: default;
+    }
+
+    /* cita o frase célebre */
+    .quote {
+      background: #fdead7;
+      border-radius: 2rem;
+      padding: 1.8rem;
+      text-align: center;
+      margin: 2rem 0 2rem;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: #4f2d18;
+      border-left: 12px solid #f5b379;
+      font-weight: 500;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: normal;
+      color: #b45f2c;
+    }
+
+    /* footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0 1rem;
+      margin-top: 2rem;
+      border-top: 2px dashed #fed6a3;
+      color: #8b694c;
+      font-size: 0.85rem;
+    }
+
+    /* botón simple */
+    .meow-btn {
+      background: #f7bc6c;
+      border: none;
+      font-family: inherit;
+      padding: 0.7rem 1.4rem;
+      border-radius: 60px;
+      font-weight: bold;
+      color: #422a18;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .meow-btn:hover {
+      background: #f5a642;
+      transform: scale(0.97);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    /* responsive */
+    @media (max-width: 680px) {
+      .container {
+        padding: 1rem;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .fact-card {
+        min-width: 140px;
+      }
+      .cat-info h3 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<a href="index.html" ><button><p>return</p></button></a>
+<div class="container">
+  <!-- encabezado gatuno -->
+  <div class="hero">
+    <div class="badge">🐾  ¡Purr-fecto!  🐾</div>
+    <h1>
+      <span>🐈</span> MUNDO GATUNO <span>🐈‍⬛</span>
+    </h1>
+    <p>Descubre la elegancia, el misterio y la ternura de los felinos más adorables del planeta.</p>
+    <button id="meowButton" class="meow-btn">🐱 ¡Haz clic para un maullido! 🐱</button>
+    <audio id="meowAudio" preload="auto">
+      <source src="https://www.myinstants.com/media/sounds/meow_1.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio, pero igual los gatos son geniales.
+    </audio>
+  </div>
+
+  <!-- galería de gatos: imágenes reales desde fuentes libres (unsplash) -->
+  <div class="gallery">
+    <div class="cat-card">
+      <img class="cat-img" src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=500&h=500&fit=crop" alt="Gato naranja relajado" loading="lazy">
+      <div class="cat-info">
+        <h3>🍊 Miel <span class="emoji-paw">🐾</span></h3>
+        <p>Pelirrojo y acaramelado, experto en siestas al sol y ronroneos terapéuticos.</p>
+      </div>
+    </div>
+    <div class="cat-card">
+      <img class="cat-img" src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=500&h=500&fit=crop" alt="Gato gris con ojos verdes" loading="lazy">
+      <div class="cat-info">
+        <h3>🌫️ Loba Gris <span class="emoji-paw">🐾</span></h3>
+        <p>Mirada profunda, actitud noble; el guardián silencioso de la casa.</p>
+      </div>
+    </div>
+    <div class="cat-card">
+      <img class="cat-img" src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=500&h=500&fit=crop" alt="Gato negro elegante" loading="lazy">
+      <div class="cat-info">
+        <h3>🖤 Sombra <span class="emoji-paw">🐾</span></h3>
+        <p>Místico y cariñoso, derriba mitos con cada ronroneo.</p>
+      </div>
+    </div>
+    <div class="cat-card">
+      <img class="cat-img" src="https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?w=500&h=500&fit=crop" alt="Gato blanco y negro" loading="lazy">
+      <div class="cat-info">
+        <h3>🖤🤍 Tuxedo <span class="emoji-paw">🐾</span></h3>
+        <p>Con corbata de moño, siempre listo para la aventura y las caricias.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- datos curiosos con estilo -->
+  <div class="facts-section">
+    <h2>📚 Datos curiosos gatunos</h2>
+    <div class="facts-grid">
+      <div class="fact-card">
+        <div class="fact-icon">😴💤</div>
+        <h4>Dormilones eternos</h4>
+        <p>Los gatos duermen entre 12 y 16 horas diarias, ¡70% de su vida!</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🗣️🐈</div>
+        <h4>+100 sonidos</h4>
+        <p>Los gatos producen más de 100 vocalizaciones, mientras los perros solo 10.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">👃🔍</div>
+        <h4>Huella nasal única</h4>
+        <p>¡El hocico de cada gato tiene un patrón único, como nuestras huellas dactilares!</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">💧🏃</div>
+        <h4>Super velocidad</h4>
+        <p>Un gato doméstico puede correr hasta 48 km/h en distancias cortas.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Razas famosas -->
+  <div class="breeds">
+    <h2>🐈‍⬛ Razas que enamoran 🐈</h2>
+    <div class="breed-list">
+      <span class="breed-tag">🇹🇷 Van Turco</span>
+      <span class="breed-tag">🇬🇧 British Shorthair</span>
+      <span class="breed-tag">🇺🇸 Maine Coon</span>
+      <span class="breed-tag">🇷🇺 Azul ruso</span>
+      <span class="breed-tag">🇫🇷 Chartreux</span>
+      <span class="breed-tag">🇯🇵 Bobtail japonés</span>
+      <span class="breed-tag">🇪🇬 Mau egipcio</span>
+      <span class="breed-tag">🇮🇷 Persa</span>
+    </div>
+  </div>
+
+  <!-- Frase inspiradora + beneficio de tener gatos -->
+  <div class="quote">
+    “Los gatos son obras maestras de la naturaleza, elegantes, independientes y llenos de misterio. <br> 
+    Quien ama a un gato, entiende de paciencia y ternura.”
+    <span>— Leonard Michaels (adaptado) ✨</span>
+  </div>
+
+  <!-- Sección extra: beneficios y cuidados básicos -->
+  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 2rem 0;">
+    <div style="flex:1; background: #fff9f0; border-radius: 2rem; padding: 1.4rem; border:1px solid #ffe2bd;">
+      <h3 style="display: flex; gap:6px; color:#bd6b2a;">❤️ Beneficios de tener un gato</h3>
+      <ul style="margin-left: 1.2rem; margin-top: 0.8rem; color:#5f3c27;">
+        <li>🐾 Reducen el estrés y la ansiedad.</li>
+        <li>🐾 Mejoran la salud cardiovascular.</li>
+        <li>🐾 Compañía silenciosa y leal.</li>
+        <li>🐾 Ayudan a crear rutinas responsables.</li>
+      </ul>
+    </div>
+    <div style="flex:1; background: #fff9f0; border-radius: 2rem; padding: 1.4rem; border:1px solid #ffe2bd;">
+      <h3 style="display: flex; gap:6px; color:#bd6b2a;">📋 Cuidados esenciales</h3>
+      <ul style="margin-left: 1.2rem; margin-top: 0.8rem; color:#5f3c27;">
+        <li>🥣 Alimentación balanceada y agua fresca.</li>
+        <li>🪥 Cepillado semanal (¡y diversión!).</li>
+        <li>🧸 Rascadores y juguetes interactivos.</li>
+        <li>🏥 Visitas regulares al veterinario.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- curiosidad extra: el ronroneo misterioso -->
+  <div style="text-align: center; background: #faeedb; border-radius: 2rem; padding: 1rem; margin: 0.5rem 0 1.5rem;">
+    <p style="font-weight: 500;">✨ ¿Sabías que el ronroneo de los gatos vibra entre 20 y 150 Hz y se ha relacionado con la regeneración ósea?</p>
+  </div>
+
+  <footer>
+    <p>🐱 Hecho con 💛 y muchos ronroneos — Todos los derechos gatunos reservados 🐾</p>
+    <p style="margin-top: 0.5rem;">🌐 inspiración gatuna | imágenes libres de Unsplash</p>
+  </footer>
+</div>
+
+<!-- script para el botón de audio y pequeños efectos interactivos -->
+<script>
+  (function() {
+    const meowBtn = document.getElementById('meowButton');
+    let audio = document.getElementById('meowAudio');
+
+    // Función para intentar reproducir el maullido
+    function playMeow() {
+      if (!audio) return;
+      // Recargar el audio por si acaso, reiniciar y reproducir
+      audio.pause();
+      audio.currentTime = 0;
+      // Intentamos usar promesa de reproducción para evitar bloqueos del navegador
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.log("Error al reproducir audio automático:", error);
+          // Alternativa: crear un mensaje emergente suave o mostrar alerta pero no intrusivo
+          alert("🐈 ¡Haz clic en cualquier lugar de la página para permitir el sonido! (el navegador bloqueó el audio automático)");
+        });
+      }
+    }
+
+    if (meowBtn) {
+      meowBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        playMeow();
+        // Efecto adicional: pequeño cambio en el botón feedback
+        meowBtn.style.transform = "scale(0.96)";
+        setTimeout(() => {
+          if(meowBtn) meowBtn.style.transform = "";
+        }, 120);
+      });
+    }
+
+    // opcional: si el audio no carga por problemas de red, usar un fallback mediante synthesis
+    // Pero queda funcional, incluimos un mensaje en consola.
+    if (audio) {
+      audio.addEventListener('error', (err) => {
+        console.warn("No se pudo cargar el archivo de sonido remoto, pero puedes imaginar un dulce maullido 💕");
+      });
+    }
+
+    // Añadir un pequeño efecto 'sorpresa' en las tarjetas de gatos: al hacer clic muestran un dato curioso en consola
+    const cards = document.querySelectorAll('.cat-card');
+    cards.forEach((card, index) => {
+      card.addEventListener('click', () => {
+        const nombres = ['Miel', 'Loba Gris', 'Sombra', 'Tuxedo'];
+        const datosExtra = [
+          'A Miel le encanta perseguir pelusas de polvo.',
+          'Loba Gris puede saltar hasta 5 veces su altura.',
+          'Sombra es un experto en abrir puertas despacio.',
+          'Tuxedo da la pata cuando quiere premio.'
+        ];
+        const nombreGato = nombres[index % nombres.length];
+        const fact = datosExtra[index % datosExtra.length];
+        // mostrar un pequeño tooltip informativo con alert suave pero para que no moleste, usamos un alert rápido? mejor un console + notificación sutil
+        // Pero queremos que sea amigable y sencillo, haremos un pequeño toast con un div temporal
+        showToast(`🐈 ${nombreGato}: ${fact}`);
+      });
+    });
+
+    // función para notificación temporal (estilo toast)
+    function showToast(message) {
+      let toast = document.createElement('div');
+      toast.innerText = message;
+      toast.style.position = 'fixed';
+      toast.style.bottom = '20px';
+      toast.style.left = '50%';
+      toast.style.transform = 'translateX(-50%)';
+      toast.style.backgroundColor = '#2e241fe6';
+      toast.style.color = '#ffedd5';
+      toast.style.padding = '12px 20px';
+      toast.style.borderRadius = '40px';
+      toast.style.fontSize = '0.9rem';
+      toast.style.fontWeight = '500';
+      toast.style.zIndex = '1000';
+      toast.style.backdropFilter = 'blur(8px)';
+      toast.style.fontFamily = 'inherit';
+      toast.style.boxShadow = '0 6px 14px rgba(0,0,0,0.2)';
+      toast.style.border = '1px solid #ffc285';
+      document.body.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.3s';
+        setTimeout(() => toast.remove(), 400);
+      }, 2200);
+    }
+
+    // agregar un pequeño ícono de "pata" dinámica en consola para saludar
+    console.log("%c🐱 ¡Bienvenido al mundo gatuno! 🐾", "color: #e67e22; font-size: 16px; font-weight: bold;");
+  })();
+</script>
+</body>
+</html>
